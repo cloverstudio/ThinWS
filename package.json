@@ -1,0 +1,21 @@
+{
+  "name": "thinws",
+  "version": "1.0.0",
+  "description": "Websocket server and client wrappers with redis pub/sub",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "tsc",
+    "prepare": "npm run build"
+  },
+  "types": "index.d.ts",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cloverstudio/ThinWS.git"
+  },
+  "author": "Clover Studio Ltd.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cloverstudio/ThinWS/issues"
+  },
+  "homepage": "https://github.com/cloverstudio/ThinWS#readme"
+}

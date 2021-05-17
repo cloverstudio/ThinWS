@@ -7,7 +7,7 @@ interface Message {
     payload: any
   }
 
-export class MyWebSocket{
+export default class MyWebSocket{
 
     ws?: WebSocket;
     connectionID: string;

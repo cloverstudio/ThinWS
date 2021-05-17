@@ -35,6 +35,7 @@
     "websocket": "^1.0.34"
   },
   "files": [
-    "dist"
+    "dist",
+    "src"
   ]
 }

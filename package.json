@@ -1,6 +1,6 @@
 {
   "name": "thinws",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "description": "Websocket server and client wrappers with redis pub/sub",
   "main": "./dist/index.js",
   "scripts": {

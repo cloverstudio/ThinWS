@@ -1,6 +1,6 @@
 {
   "name": "thinws",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Websocket server and client wrappers with redis pub/sub",
   "main": "./dist/index.js",
   "scripts": {
@@ -34,5 +34,7 @@
     "uuid": "^8.3.2",
     "websocket": "^1.0.34"
   },
-  "files":  ["dist/"]
+  "files": [
+    "dist/"
+  ]
 }

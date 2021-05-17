@@ -1,2 +1,6 @@
-export * as ThinWSServer from './ThinWSServer';
-export * as ThinWSClient from './ThinWSClient';
+
+import CustomWebSocketServer from './ThinWSServer';
+export {CustomWebSocketServer as ThinWSServer};
+
+import MyWebSocket from './ThinWSClient';
+export {MyWebSocket as ThinWSClient};

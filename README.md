@@ -29,6 +29,7 @@ Advanced: you could implement your own client library if you're not working with
 <br/>
 
 <br/>
+
 ### What to do after creating the client
 
 From the perspective of the client application, this is all you have to do to get this working. Details of every method (names, parameters...) can be found below in "Client" section

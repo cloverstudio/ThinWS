@@ -30,10 +30,10 @@ The server and client work together like a WebSocket wrapper so you don't have t
         payload: any
     }
 
-Note: you don't need to worry about most of the parameters, the library will handle that for you. This is here for informational purposes.
-
-
 `roomID`        - required (for subscribe, unsubscribe and message types) and is there for the server to know which room to send the payload to.
+
+Note: you don't need to worry about the rest of the parameters, the library will handle that for you. This is here for informational purposes.
+
 
 `type`          - required and notes the type of the message (connect, disconnect, subscribe, unsubscribe, ack)
 

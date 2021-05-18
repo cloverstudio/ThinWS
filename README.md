@@ -28,10 +28,8 @@ The server and client work together like a WebSocket wrapper so you don't have t
 Advanced: you could implement your own client library if you're not working with javascript or want to change something to your liking
 <br/>
 
-
-
-
 <br/>
+### What to do after creating the client
 
 From the perspective of the client application, this is all you have to do to get this working. Details of every method (names, parameters...) can be found below in "Client" section
 

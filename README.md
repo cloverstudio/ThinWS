@@ -21,7 +21,7 @@ The server and client work together like a WebSocket wrapper so you don't have t
 
 
 ## How to use
-- install the package
+- npm install the package
 - instantiate ThinWSServer object in your server (node) app
 - instantiate ThinWSClient object in your client (js) app
 - use the ThinWSClient methods to send whatever messages you like

@@ -18,7 +18,7 @@ The server and client work together like a WebSocket wrapper so you don't have t
 <br/>
 
 
-## How to use:
+## How to use
 - install the package
 - instantiate ThinWSServer object in your server (node) app
 - instantiate ThinWSClient object in your client (js) app

@@ -6,7 +6,7 @@ This is a custom websocket server and client wrapper created in mind for horizon
 
 Written in typescript.
 
-The client library has no extra dependencies (no need to install any extra packages) so it can be simply used in client side. You can use it with webpack/browserify or even just copy paste it as plain javascript and <script/> your html
+The client library (ThinWSClient) has no extra dependencies (no need to install any extra packages) so it can be simply used in client side. You can use it with webpack/browserify or even just copy paste it as plain javascript and add it to your html
 
 ## Installation
 `npm install thinws`  or   `npm i thinws`
@@ -28,51 +28,6 @@ The server and client work together like a WebSocket wrapper so you don't have t
 Advanced: you could implement your own client library if you're not working with javascript or want to change something to your liking
 <br/>
 
-
-### Internal message structure - this is only informational, yo
-
-    {
-        messageID: string,
-        type: string,
-        roomID: string   
-        connectionID: string  
-        payload: any
-    }
-
-`roomID`        - required and is there for the server to know which room is the message for.
-
-Note: you don't need to worry about the rest of the parameters, the library will handle that for you. This is here for informational purposes.
-
-
-`type`          - required and notes the type of the message (connect, disconnect, subscribe, unsubscribe, ack)
-
-`messageID`     - required and is there if you want to implement the acknowledge functionality
-
-`connectionID`  - required for subscribe and unsubscribe only
-
-`payload`       - JSON data, whatever you want
-
-
-<br/>
-
-
-
-#### Message types (client sends to server)
-
-`connect` - connect to all rooms of an user (specified by connectionID)
-
-`disconnect` - disconnect from all rooms of an user
-
-`subscribe`- subscribe/connect to a new room
-
-`unsubscribe` - unsubscribe/delete an existing room from user
-
-`message` - message that carries payload
-
-
-#### Message types (server sends to client)
-
-`ack` - acknowledge that server received the message
 
 
 
@@ -152,6 +107,57 @@ httpServer object can normally still use express and other options.
 
 #### Importing the ThinWSClient to your project
 `import {ThinWSClient} from 'thinws'`
+
+
+<br/>
+<br/>
+
+
+## Informational
+### Internal message structure - this is only informational
+
+    {
+        messageID: string,
+        type: string,
+        roomID: string   
+        connectionID: string  
+        payload: any
+    }
+
+`roomID`        - required and is there for the server to know which room is the message for.
+
+Note: you don't need to worry about the rest of the parameters, the library will handle that for you. This is here for informational purposes.
+
+
+`type`          - required and notes the type of the message (connect, disconnect, subscribe, unsubscribe, ack)
+
+`messageID`     - required and is there if you want to implement the acknowledge functionality
+
+`connectionID`  - required for subscribe and unsubscribe only
+
+`payload`       - JSON data, whatever you want
+
+
+<br/>
+
+
+
+#### Message types (client sends to server)
+
+`connect` - connect to all rooms of an user (specified by connectionID)
+
+`disconnect` - disconnect from all rooms of an user
+
+`subscribe`- subscribe/connect to a new room
+
+`unsubscribe` - unsubscribe/delete an existing room from user
+
+`message` - message that carries payload
+
+
+#### Message types (server sends to client)
+
+`ack` - acknowledge that server received the message
 
 
 <br/>

@@ -12,6 +12,32 @@ Written in typescript.
 
 <br/>
 
+### Message structure
+
+    {
+        messageID: string,
+        type: string,
+        roomID: string   
+        connectionID: string  
+        payload: any
+    }
+
+Note: you don't need to worry about most of the parameters, the library will handle that for you. This is here for informational purposes.
+
+
+`roomID`        - required (for subscribe, unsubscribe and message types) and is there for the server to know which room to send the payload to.
+
+`type`          - required and notes the type of the message (connect, disconnect, subscribe, unsubscribe, ack)
+
+`messageID`     - required and is there if you want to implement the acknowledge functionality
+
+`connectionID`  - required for subscribe and unsubscribe only.
+
+`payload`       - JSON data, whatever you want
+
+
+
+
 ## Server
 
 The server works as a standalone (no needed modification), but you can write your own listener functions for events. By default, the server can receive a message that contains information about the "room" they are intended for and publishes the message to redis, and then all the servers subscribed to that room (including the one sending the message) will receive the message. 
@@ -31,28 +57,6 @@ The server works as a standalone (no needed modification), but you can write you
 #### Message types (server sends to client)
 `ack` - acknowledge that server received the message
 
-### Message structure
-
-    {
-        messageID: string,
-        type: string,
-        roomID: string   
-        connectionID: string  
-        payload: any
-    }
-
-Note: if you just use the ThinWSClient you don't need to worry about the parameters, the client side library will handle that for you
-
-
-`roomID`        - required (for subscribe, unsubscribe and message types) and is there for the server to know which room to send the payload to.
-
-`type`          - required and notes the type of the message (connect, disconnect, subscribe, unsubscribe, ack)
-
-`messageID`     - required and is there if you want to implement the acknowledge functionality
-
-`connectionID`  - required for subscribe and unsubscribe only.
-
-`payload`       - JSON data, whatever you want
 
 
 

@@ -16,7 +16,7 @@ This is a custom websocket server and client wrapper created in mind for horizon
 ## Client
 
 ### Importing the ThinWSClient to your project
-`import {ThinWSClient}`from 'thinws'`
+`import {ThinWSClient} from 'thinws'`
 
 
 ## Notes

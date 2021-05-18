@@ -93,7 +93,8 @@ message
 
 #### Importing the ThinWSClient to your project
 
-`import {ThinWSClient} from 'thinws'`or if you're using vanilla javascript (doesn't support imports) we suggest using browserify bundler (allows to use npm package in browser). You can even copy paste the ThinWSClient.js code to your script if you don't want to use bundlers.  
+`import {ThinWSClient} from 'thinws'`
+or if you're using vanilla javascript (doesn't support imports) we suggest using browserify bundler (allows to use npm package in browser). You can even copy paste the ThinWSClient.js code to your script if you don't want to use bundlers.  
 
 
 ### What to do after creating the client

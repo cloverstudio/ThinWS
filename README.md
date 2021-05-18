@@ -12,6 +12,22 @@ This is a custom websocket server and client wrapper created in mind for horizon
 ### Importing the ThinWSServer to your project
 `import {ThinWSServer} from 'thinws'`
 
+### Creating a new ThinWSServer instance
+    
+    const server = new ThinWSServer(redisConfig, httpServer);
+
+As you can see, the constructor takes two objects, the first is the redis configuration options and the second is the httpServer.
+Redis configuration example:
+    redisConfig = {
+      host: 'localhost',
+      port: 6379,
+      retry_strategy: ()=>{
+          const n = 2;
+          return n * 1000; // retry connection after n seconds
+      },
+      connectTimeout: 60*60*1000
+    }
+
 
 ## Client
 

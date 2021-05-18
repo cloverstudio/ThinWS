@@ -43,9 +43,13 @@ Note: you don't need to worry about the rest of the parameters, the library will
 
 `payload`       - JSON data, whatever you want
 
+
 <br/>
 
+
+
 #### Message types (client sends to server)
+
 `connect` - connect to all rooms of an user (specified by connectionID)
 
 `disconnect` - disconnect from all rooms of an user
@@ -56,15 +60,25 @@ Note: you don't need to worry about the rest of the parameters, the library will
 
 `message` - message that carries payload
 
+
 #### Message types (server sends to client)
+
 `ack` - acknowledge that server received the message
+
+
+
+<br/>
 
 Intended flow of messages:
 
-1) client app creates the ThinWSClient instance - the instance requires url, connectionID (give some kind of identifier to a user/client, can be username, random string, whatever)
-The instance will send the 
+1) client app creates the ThinWSClient instance - the instance will send the `connect` message to the server to inititate the connection and connect to client's existing rooms (if there are any)
+2A) client app sends subscribe message - subscribe the client to new room
+2B) client app sends message to one of the connected rooms 
+optional) client app sends unsubscribe - unsubscribe from the room
+optional) client app sends disconnect - this is not needed, but is welcome as it uses less resources than the force quit method, this can be called `onwindowunload`
 
 <br/>
+
 
 ## Server
 

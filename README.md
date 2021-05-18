@@ -36,19 +36,12 @@ Advanced: you could implement your own client library if you're not working with
 <br/>
 
 
-## Server
+## ThinWSServer
 
 The server works as a standalone (no needed modification), but you can write your own listener functions for events. By default, the server can receive a message that contains information about the "room" they are intended for and publishes the message to redis, and then all the servers subscribed to that room (including the one sending the message) will receive the message. 
 
 
-
-
-
-
-
 <br/>
-
-
 
 
 #### Importing the ThinWSServer to your project
@@ -80,6 +73,10 @@ httpServer creation:
 httpServer object can normally still use express and other options.
     
 <br/>
+## What next? 
+
+Set the httpServer to listen on wanted port and the ThinWSServer object that you created will do everything for you.
+Now your server is set up. You can handle the events if you want to. 
 
 ### Events
 connect,
@@ -94,16 +91,31 @@ message
 ## Client
 
 #### Importing the ThinWSClient to your project
-`import {ThinWSClient} from 'thinws'`
+
+`import {ThinWSClient} from 'thinws'`or if you're using vanilla javascript (doesn't support imports) we suggest using browserify bundler (allows to use npm package in browser). You can even copy paste the ThinWSClient.js code to your script if you don't want to use bundlers.  
 
 
 ### What to do after creating the client
 
-From the perspective of the client application, this is all you have to do to get this working. Details of every method (names, parameters...) can be found below in "Client" section
+From the perspective of the client application, this is all you have to do. 
 
 Intended flow of messages:
 
+
 1 ) client app creates the ThinWSClient instance - the instance will send the `connect` message to the server to inititate the connection and connect to client's existing rooms (if there are any)
+
+    const customWSClient = new ThinWSClient(url, connectionID, onMessage, onOpen);
+   
+`url` is your websocket server url (eg. ws://localhost:8080)
+
+`connectionID` is your client app identifier - this has to be the same every time so the server knows what rooms to join on connection
+
+`onMessage` is your custom message handler function - it gets a `message` object (param), then you can use that message to do whatever you want (show to screen, store to db...)
+
+`onOpen` (optional) this is where you can add custom code to trigger when the connections is done connecting
+
+<br/>
+
 
 2A ) client app initiates `subscribe` (via the ThinWSClient method with the same name) - sends `subscribe` message and subscribes the client to the new room
 

@@ -6,14 +6,16 @@ This is a custom websocket server and client wrapper created in mind for horizon
 
 Written in typescript.
 
-The client library (ThinWSClient) has no extra dependencies (no need to install any extra packages) so it can be simply used in client side. You can use it with webpack/browserify or even just copy paste it as plain javascript and add it to your html. 
+The client library (ThinWSClient) has no extra dependencies (no need to install any extra packages) so it can be simply used in client side. You can use it with webpack/browserify or even just copy paste it as plain javascript and add it to your html.
+
+You can also use only the server library if you want to implement your own client library.
 
 ## Installation
 `npm install thinws`  or   `npm i thinws`
 
 ### How it works
 
-The server and client work together like a WebSocket wrapper so you don't have to worry about the implementation details. The client library exposes methods for sending your custom messages and thats it. You can also use only the server library if you want to implement your own client library.
+The server and client work together like a WebSocket wrapper so you don't have to worry about the implementation details. The client library exposes methods for sending your custom messages and thats it. 
 
 <br/>
 

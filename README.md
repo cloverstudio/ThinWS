@@ -19,9 +19,13 @@ The server works as a standalone (no needed modification), but you can write you
 
 #### Message types (client sends to server)
 `connect` - connect to all rooms of an user (specified by connectionID)
+
 `disconnect` - disconnect from all rooms of an user
+
 `subscribe`- subscribe/connect to a new room
+
 `unsubscribe` - unsubscribe/delete an existing room from user
+
 `message` - message that carries payload
 
 #### Message types (server sends to client)

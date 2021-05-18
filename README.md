@@ -1,5 +1,7 @@
 # ThinWS
 
+This npm package is still under development and may change considerably in the near future. Version 1.0.9 is the current one in the time of writing this readme.
+
 This is a custom websocket server and client wrapper created in mind for horizontal scalability. It uses redis pub/sub for communication between multiple server instances. You can run multiple server apps (which create a thinWS Server object) behind a load balancer like nginx or HAProxy. This package uses npm package [websocket](https://www.npmjs.com/package/websocket) as its underlying websocket server. 
 
 Written in typescript.
@@ -26,7 +28,10 @@ The server works as a standalone (no needed modification), but you can write you
         payload: any
     }
 
-`roomID`        - required (for subscribe, unsubscribe and message types)and is there for the server to know which room to send the payload to.
+Note: if you just use the ThinWSClient you don't need to worry about the parameters, the client side library will handle that for you
+
+
+`roomID`        - required (for subscribe, unsubscribe and message types) and is there for the server to know which room to send the payload to.
 
 `type`          - required and notes the type of the message (connect, disconnect, subscribe, unsubscribe, ack)
 

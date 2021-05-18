@@ -5,7 +5,7 @@ This is a custom websocket server and client wrapper created in mind for horizon
 
 
 ## Installation
-`npm install thinws` or  `npm i thinws`
+`npm install thinws`  or   `npm i thinws`
 
 ## Server
 

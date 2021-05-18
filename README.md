@@ -18,7 +18,8 @@ This is a custom websocket server and client wrapper created in mind for horizon
 
 As you can see, the constructor takes two objects, the first is the redis configuration options and the second is the httpServer.
 Redis configuration example:
-   ` redisConfig = {
+
+    redisConfig = {
       host: 'localhost',
       port: 6379,
       retry_strategy: ()=>{
@@ -27,7 +28,6 @@ Redis configuration example:
       },
       connectTimeout: 60*60*1000
     }
-`
 
 ## Client
 

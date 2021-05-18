@@ -35,6 +35,7 @@ httpServer creation:
     import http from 'http';
     const httpServer = http.createServer();
     
+httpServer object can normally still use express and other options.
     
 ## Client
 

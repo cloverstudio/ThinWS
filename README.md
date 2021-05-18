@@ -21,15 +21,17 @@ The server and client work together like a WebSocket wrapper so you don't have t
 <br/>
 
 
-## TL;DR:
+## How to use:
 - install the package
 - instantiate ThinWSServer object in your server (node) app
 - instantiate ThinWSClient object in your client (js) app
 - use the ThinWSClient methods to send whatever messages you like
 
+
 <br/>
 
-### Message structure
+
+### Internal message structure - this is only informational, yo
 
     {
         messageID: string,

@@ -43,6 +43,8 @@ Note: you don't need to worry about the rest of the parameters, the library will
 
 `payload`       - JSON data, whatever you want
 
+<br/>
+
 #### Message types (client sends to server)
 `connect` - connect to all rooms of an user (specified by connectionID)
 
@@ -62,7 +64,7 @@ Intended flow of messages:
 1) client app creates the ThinWSClient instance - the instance requires url, connectionID (give some kind of identifier to a user/client, can be username, random string, whatever)
 The instance will send the 
 
-
+<br/>
 ## Server
 
 The server works as a standalone (no needed modification), but you can write your own listener functions for events. By default, the server can receive a message that contains information about the "room" they are intended for and publishes the message to redis, and then all the servers subscribed to that room (including the one sending the message) will receive the message. 
@@ -113,7 +115,8 @@ httpServer object can normally still use express and other options.
     
     
 <br/>
-    
+<br/>
+
 ## Client
 
 #### Importing the ThinWSClient to your project

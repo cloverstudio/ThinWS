@@ -8,7 +8,7 @@ Written in typescript.
 
 The client library (ThinWSClient) has no extra dependencies (no need to install any extra packages) so it can be simply used in client side. You can use it with webpack/browserify or even just copy paste it as plain javascript and add it to your html.
 
-You can also use only the server library if you want to implement your own client library.
+You can also use only the server library if you want to implement your own client library (for eg. your client app is not a javascript based application).
 
 ## Installation
 `npm install thinws`  or   `npm i thinws`
@@ -27,7 +27,6 @@ The server and client work together like a WebSocket wrapper so you don't have t
 - use the ThinWSClient methods to send whatever messages you like
 
 
-Advanced: you could implement your own client library if you're not working with javascript or want to change something to your liking
 <br/>
 
 <br/>

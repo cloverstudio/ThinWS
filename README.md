@@ -14,4 +14,4 @@ This is a custom websocket server and client wrapper created in mind for horizon
 
 
 ## Notes
-MIT license. Created by [Clover Studio Ltd.] (https://clover.studio/)
+MIT license. Created by [Clover Studio Ltd.](https://clover.studio/)

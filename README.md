@@ -10,22 +10,35 @@ Written in typescript.
 
 ## Server
 
-The server works as a standalone (no needed modification), but you can write your own listener functions for events. By default, the server receives messages that contain information about the "room" they are intended for and publishes the message to redis, and then all the servers subscribed to that room(including the one sending the message) receives the message. 
+The server works as a standalone (no needed modification), but you can write your own listener functions for events. By default, the server receives messages that contain information about the "room" they are intended for and publishes the message to redis, and then all the servers subscribed to that room (including the one sending the message) receives the message. 
+
+
+#### Message types
+
 
 ### Message structure
 
     {
         messageID: string,
         type: string,
-        roomID: string   //optional
-        connectionID: string  //optional
+        roomID: string   
+        connectionID: string  
         payload: any
     }
 
-roomID parameter is required and is there for the server to know which room to send the payload to.
+roomID parameter is required (for subscribe, unsubscribe and message types)and is there for the server to know which room to send the payload to.
+
 type parameter is required and notes the type of the message (connect, disconnect, subscribe, unsubscribe, ack)
 
-#### Message types
+messageID is required and is there if you want to implement the acknowledge functionality
+
+connectionID is required for subscribe and unsubscribe only.
+
+payload: JSON data, whatever you want
+
+
+
+
 
 
 ### Events

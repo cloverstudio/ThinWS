@@ -63,12 +63,7 @@ The server works as a standalone (no needed modification), but you can write you
 <br/>
 
 
-### Events
-connect,
-disconnect,
-subscribe,
-unsubscribe,
-message
+
 
 #### Importing the ThinWSServer to your project
 `import {ThinWSServer} from 'thinws'`
@@ -98,6 +93,14 @@ httpServer creation:
     
 httpServer object can normally still use express and other options.
     
+<br/>
+
+### Events
+connect,
+disconnect,
+subscribe,
+unsubscribe,
+message
     
 <br/>
 <br/>

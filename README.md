@@ -73,6 +73,7 @@ httpServer creation:
 httpServer object can normally still use express and other options.
     
 <br/>
+
 ## What next? 
 
 Set the httpServer to listen on wanted port and the ThinWSServer object that you created will do everything for you.
@@ -101,6 +102,7 @@ From the perspective of the client application, this is all you have to do.
 
 Intended flow of messages:
 
+<br/>
 
 1 ) client app creates the ThinWSClient instance - the instance will send the `connect` message to the server to inititate the connection and connect to client's existing rooms (if there are any)
 
@@ -119,9 +121,15 @@ Intended flow of messages:
 
 2A ) client app initiates `subscribe` (via the ThinWSClient method with the same name) - sends `subscribe` message and subscribes the client to the new room
 
+<br/>
+
 2B ) client app initiates `message` (via the ThinWSClient method) with payload to one of the connected rooms - sends `message` message to the room
 
+<br/>
+
 optional ) client app sends `unsubscribe` - unsubscribe from the room
+
+<br/>
 
 optional ) client app sends `disconnect` - this is not needed, but is welcome as it uses less resources than the force quit method, this can be called `onwindowunload`
 

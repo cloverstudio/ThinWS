@@ -27,6 +27,7 @@ The server and client work together like a WebSocket wrapper so you don't have t
 - instantiate ThinWSClient object in your client (js) app
 - use the ThinWSClient methods to send whatever messages you like
 
+<br/>
 
 ### Message structure
 

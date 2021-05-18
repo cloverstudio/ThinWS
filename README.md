@@ -10,11 +10,7 @@ Written in typescript.
 ## Installation
 `npm install thinws`  or   `npm i thinws`
 
-## How it works
-
-This is intended to work as following:
-1) Implement a node app that instantiates a ThinWSServer instance 
-2) Implement a client app that instantiates a ThinWSClient instance 
+### How it works
 
 The server and client work together like a WebSocket wrapper so you don't have to worry about the implementation details. The client library exposes methods for sending your custom messages and thats it. 
 

@@ -30,21 +30,7 @@ Advanced: you could implement your own client library if you're not working with
 
 <br/>
 
-### What to do after creating the client
 
-From the perspective of the client application, this is all you have to do to get this working. Details of every method (names, parameters...) can be found below in "Client" section
-
-Intended flow of messages:
-
-1 ) client app creates the ThinWSClient instance - the instance will send the `connect` message to the server to inititate the connection and connect to client's existing rooms (if there are any)
-
-2A ) client app initiates `subscribe` (via the ThinWSClient method with the same name) - sends `subscribe` message and subscribes the client to the new room
-
-2B ) client app initiates `message` (via the ThinWSClient method) with payload to one of the connected rooms - sends `message` message to the room
-
-optional ) client app sends `unsubscribe` - unsubscribe from the room
-
-optional ) client app sends `disconnect` - this is not needed, but is welcome as it uses less resources than the force quit method, this can be called `onwindowunload`
 
 
 <br/>
@@ -110,6 +96,22 @@ message
 #### Importing the ThinWSClient to your project
 `import {ThinWSClient} from 'thinws'`
 
+
+### What to do after creating the client
+
+From the perspective of the client application, this is all you have to do to get this working. Details of every method (names, parameters...) can be found below in "Client" section
+
+Intended flow of messages:
+
+1 ) client app creates the ThinWSClient instance - the instance will send the `connect` message to the server to inititate the connection and connect to client's existing rooms (if there are any)
+
+2A ) client app initiates `subscribe` (via the ThinWSClient method with the same name) - sends `subscribe` message and subscribes the client to the new room
+
+2B ) client app initiates `message` (via the ThinWSClient method) with payload to one of the connected rooms - sends `message` message to the room
+
+optional ) client app sends `unsubscribe` - unsubscribe from the room
+
+optional ) client app sends `disconnect` - this is not needed, but is welcome as it uses less resources than the force quit method, this can be called `onwindowunload`
 
 <br/>
 <br/>

@@ -26,15 +26,15 @@ The server works as a standalone (no needed modification), but you can write you
         payload: any
     }
 
-roomID parameter is required (for subscribe, unsubscribe and message types)and is there for the server to know which room to send the payload to.
+`roomID`        - required (for subscribe, unsubscribe and message types)and is there for the server to know which room to send the payload to.
 
-type parameter is required and notes the type of the message (connect, disconnect, subscribe, unsubscribe, ack)
+`type`          - required and notes the type of the message (connect, disconnect, subscribe, unsubscribe, ack)
 
-messageID is required and is there if you want to implement the acknowledge functionality
+`messageID`     - required and is there if you want to implement the acknowledge functionality
 
-connectionID is required for subscribe and unsubscribe only.
+`connectionID`  - required for subscribe and unsubscribe only.
 
-payload: JSON data, whatever you want
+`payload`       - JSON data, whatever you want
 
 
 

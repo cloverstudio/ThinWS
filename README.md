@@ -9,10 +9,10 @@ This is a custom websocket server and client wrapper created in mind for horizon
 
 ## Server
 
-##### Importing the ThinWSServer to your project
+#### Importing the ThinWSServer to your project
 `import {ThinWSServer} from 'thinws'`
 
-##### Creating a new ThinWSServer instance
+#### Creating a new ThinWSServer instance
     
     const server = new ThinWSServer(redisConfig, httpServer);
 
@@ -39,7 +39,7 @@ httpServer object can normally still use express and other options.
     
 ## Client
 
-##### Importing the ThinWSClient to your project
+#### Importing the ThinWSClient to your project
 `import {ThinWSClient} from 'thinws'`
 
 

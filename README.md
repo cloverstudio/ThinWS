@@ -10,6 +10,8 @@ Written in typescript.
 ## Installation
 `npm install thinws`  or   `npm i thinws`
 
+<br/>
+
 ## Server
 
 The server works as a standalone (no needed modification), but you can write your own listener functions for events. By default, the server receives messages that contain information about the "room" they are intended for and publishes the message to redis, and then all the servers subscribed to that room (including the one sending the message) receives the message. 
@@ -81,11 +83,17 @@ httpServer creation:
     
 httpServer object can normally still use express and other options.
     
+    
+<br/>
+    
 ## Client
 
 #### Importing the ThinWSClient to your project
 `import {ThinWSClient} from 'thinws'`
 
+
+<br/>
+<br/>
 
 ## Notes
 MIT license. Created by [Clover Studio Ltd.](https://clover.studio/)

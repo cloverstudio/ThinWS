@@ -10,6 +10,14 @@ Written in typescript.
 ## Installation
 `npm install thinws`  or   `npm i thinws`
 
+## How it works
+
+This is intended to work as following:
+1) Implement a node app that instantiates a ThinWSServer instance 
+2) Implement a client app that instantiates a ThinWSClient instance 
+
+The server and client work together like a WebSocket wrapper so you don't have to worry about the implementation details.
+
 <br/>
 
 ### Message structure
@@ -35,14 +43,6 @@ Note: you don't need to worry about most of the parameters, the library will han
 
 `payload`       - JSON data, whatever you want
 
-
-
-
-## Server
-
-The server works as a standalone (no needed modification), but you can write your own listener functions for events. By default, the server can receive a message that contains information about the "room" they are intended for and publishes the message to redis, and then all the servers subscribed to that room (including the one sending the message) will receive the message. 
-
-
 #### Message types (client sends to server)
 `connect` - connect to all rooms of an user (specified by connectionID)
 
@@ -56,6 +56,19 @@ The server works as a standalone (no needed modification), but you can write you
 
 #### Message types (server sends to client)
 `ack` - acknowledge that server received the message
+
+Intended flow of messages:
+
+1) client app creates the ThinWSClient instance - the instance requires url, connectionID (give some kind of identifier to a user/client, can be username, random string, whatever)
+The instance will send the 
+
+
+## Server
+
+The server works as a standalone (no needed modification), but you can write your own listener functions for events. By default, the server can receive a message that contains information about the "room" they are intended for and publishes the message to redis, and then all the servers subscribed to that room (including the one sending the message) will receive the message. 
+
+
+
 
 
 

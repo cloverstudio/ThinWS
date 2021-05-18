@@ -7,7 +7,7 @@
     "build": "tsc",
     "prepare": "npm run build"
   },
-  "types": "index.d.ts",
+  "types": "./dist/index.d.ts",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/cloverstudio/ThinWS.git"

@@ -72,10 +72,15 @@ Note: you don't need to worry about the rest of the parameters, the library will
 Intended flow of messages:
 
 1) client app creates the ThinWSClient instance - the instance will send the `connect` message to the server to inititate the connection and connect to client's existing rooms (if there are any)
+
 2A) client app sends subscribe message - subscribe the client to new room
+
 2B) client app sends message to one of the connected rooms 
+
 optional) client app sends unsubscribe - unsubscribe from the room
+
 optional) client app sends disconnect - this is not needed, but is welcome as it uses less resources than the force quit method, this can be called `onwindowunload`
+
 
 <br/>
 

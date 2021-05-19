@@ -141,7 +141,7 @@ So an example of creation would look like this:
 
 ## Client methods
 
-Call them like this:
+All lowercase! Call them like this:
     
     wsClient.send(message, roomID);
 

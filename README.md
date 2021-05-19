@@ -80,7 +80,7 @@ Subscribe to server events with custom listener functions (if you want to). The 
     
     wsServer.on("message", ()=> { ... } );
     wsServer.on("connect", myCustomPredefinedFunction);
-<br/><br/>
+<br/>
 
     connect
 Happens when a new connection is accepted (client connects).

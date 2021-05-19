@@ -79,11 +79,26 @@ Set the httpServer to listen on wanted port and the ThinWSServer object that you
 Now your server is set up. You can handle the events if you want to. 
 
 ### Events
-connect,
-disconnect,
-subscribe,
-unsubscribe,
-message
+
+Subscribe to server events with custom listener functions. The server extends the EventEmitter class so you can use .on functionality. Like this: 
+    
+    wsServer.on("message", ()=> { ... } );
+    wsServer.on("connect", myCustomPredefinedFunction);
+
+    connect
+Happens when a new connection is accepted (client connects).
+
+    disconnect
+Happens when a client disconnects.
+
+    subscribe
+Happens when a client subscribes to a room.
+
+    unsubscribe
+Happens when a client unsubscribes from a room.
+
+    message
+Happens when a server receives a message.
     
 <br/>
 <br/>

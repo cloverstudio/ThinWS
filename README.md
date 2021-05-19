@@ -68,11 +68,9 @@ httpServer creation:
 httpServer object can normally still use express and other options. If you want to use express, create the app and then pass the app to the createServer method. Like this:
 
     const httpServer = http.createServer(app);
-
-
 <br/>
 
-## What next? 
+### What next? 
 
 Set the httpServer to listen on wanted port and the ThinWSServer object that you created will do everything for you.
 Now your server is set up. You can handle the events if you want to. 

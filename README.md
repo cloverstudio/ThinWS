@@ -77,9 +77,9 @@ httpServer object can normally still use express and other options. If you want 
 Set the httpServer to listen on wanted port and the ThinWSServer object that you created will do everything for you.
 Now your server is set up. You can handle the events if you want to. 
 
-### Events
+### Events - optional
 
-Subscribe to server events with custom listener functions. The server extends the EventEmitter class so you can use .on functionality. Like this: 
+Subscribe to server events with custom listener functions (if you want to). The server extends the EventEmitter class so you can use .on functionality. Like this: 
     
     wsServer.on("message", ()=> { ... } );
     wsServer.on("connect", myCustomPredefinedFunction);

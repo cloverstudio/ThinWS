@@ -76,29 +76,34 @@ Now your server is set up. You can handle the events if you want to.
 
 ### Events - optional
 
+All lowercase!
 Subscribe to server events with custom listener functions (if you want to). The server extends the EventEmitter class so you can use .on functionality. Like this: 
     
     wsServer.on("message", ()=> { ... } );
     wsServer.on("connect", myCustomPredefinedFunction);
 <br/>
 
+#### Connect 
     connect
 Happens when a new connection is accepted (client connects).
 <br/>
-<br/>
 
+#### Disconnect
     disconnect
 Happens when a client disconnects.
-<br/><br/>
+<br/>
 
+#### Subscribe
     subscribe
 Happens when a client subscribes to a room.
-<br/><br/>
+<br/>
 
+#### Unsubscribe
     unsubscribe
 Happens when a client unsubscribes from a room.
-<br/><br/>
+<br/>
 
+#### Message
     message
 Happens when a server receives a message.
     

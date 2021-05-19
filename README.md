@@ -68,7 +68,6 @@ httpServer creation:
 httpServer object can normally still use express and other options. If you want to use express, create the app and then pass the app to the createServer method. Like this:
 
     const httpServer = http.createServer(app);
-<br/>
 
 ### What next? 
 

@@ -80,23 +80,24 @@ Subscribe to server events with custom listener functions (if you want to). The 
     
     wsServer.on("message", ()=> { ... } );
     wsServer.on("connect", myCustomPredefinedFunction);
-<br/>
+<br/><br/>
 
     connect
 Happens when a new connection is accepted (client connects).
 <br/>
+<br/>
 
     disconnect
 Happens when a client disconnects.
-<br/>
+<br/><br/>
 
     subscribe
 Happens when a client subscribes to a room.
-<br/>
+<br/><br/>
 
     unsubscribe
 Happens when a client unsubscribes from a room.
-<br/>
+<br/><br/>
 
     message
 Happens when a server receives a message.

@@ -115,7 +115,7 @@ So an example of creation would look like this:
     
     const wsURL = "ws://localhost:8080";
     const connectionID = clientID;              //string
-    const onMessage = (message)=> { ... };      //message is JSON
+    const onMessage = (message)=> { console.log(message);  ... };      //message is JSON
     const onOpen = ()=> { ... };
     
     const wsClient = new ThinWSClient(wsURL, connectionID, onMessage, onOpen);

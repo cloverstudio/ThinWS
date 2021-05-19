@@ -69,8 +69,11 @@ httpServer creation:
     import http from 'http';
     const httpServer = http.createServer();
     
-httpServer object can normally still use express and other options.
-    
+httpServer object can normally still use express and other options. If you want to use express, create the app and then pass the app to the createServer method. Like this:
+
+    const httpServer = http.createServer(app);
+
+
 <br/>
 
 ## What next? 
@@ -111,13 +114,18 @@ or if you're using vanilla javascript (doesn't support imports) we suggest using
 So an example of creation would look like this:
     
     const wsURL = "ws://localhost:8080";
-    const connectionID = clientID;
-    const onMessage = (message)=> { ... };
+    const connectionID = clientID;              //string
+    const onMessage = (message)=> { ... };      //message is JSON
     const onOpen = ()=> { ... };
     
     const wsClient = new ThinWSClient(wsURL, connectionID, onMessage, onOpen);
 
-## Client methods - 
+## Client methods
+
+    send(payload, roomID)
+    
+Sends the given payload to a room. Payload can be any JSON object. roomID is string.
+
 
 
 ### What to do after creating the client

@@ -34,9 +34,6 @@ The server and client work together like a WebSocket wrapper so you don't have t
 
 
 
-<br/>
-
-
 ## ThinWSServer
 
 The server works as a standalone (no needed modification), but you can write your own listener functions for events. By default, the server can receive a message that contains information about the "room" they are intended for and publishes the message to redis, and then all the servers subscribed to that room (including the one sending the message) will receive the message. 

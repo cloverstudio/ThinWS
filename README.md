@@ -1,6 +1,6 @@
 # ThinWS
 
-This npm package is still under development and may change considerably in the near future. Version 1.0.9 is the current one in the time of writing this readme.
+This npm package is still under development and may change considerably in the near future. Version 1.0.9 is the current one at the time of writing this readme.
 
 This is a custom websocket server and client wrapper created in mind for horizontal scalability. It uses redis pub/sub for communication between multiple server instances. You can run multiple server node apps (which create a thinWSServer object) behind a load balancer like nginx or HAProxy. This package uses npm package [websocket](https://www.npmjs.com/package/websocket) as its underlying websocket server. 
 
@@ -94,7 +94,30 @@ message
 
 `import {ThinWSClient} from 'thinws'`
 
-or if you're using vanilla javascript (doesn't support imports) we suggest using browserify bundler (allows to use npm package in browser). You can even copy paste the ThinWSClient.js code to your script if you don't want to use bundlers.  
+or if you're using vanilla javascript (doesn't support imports) we suggest using a bundler (allows to use npm package in browser). You can even copy paste the ThinWSClient.js code to your script if you don't want to use bundlers.  
+
+### Creating the client - constructor explained
+
+    const customWSClient = new ThinWSClient(url, connectionID, onMessage, onOpen);
+    
+`url` is your websocket server url (eg. ws://localhost:8080)
+
+`connectionID` is your client app identifier - this has to be the same every time so the server knows what rooms to join on connection (YOU DECIDE WHAT THIS ID IS)
+
+`onMessage` is your custom message handler function - it gets a `message` object (param), then you can use that message to do whatever you want (show to screen, store to db...)
+
+`onOpen` (optional) this is where you can add custom code to trigger when the connections is done connecting
+    
+So an example of creation would look like this:
+    
+    const wsURL = "ws://localhost:8080";
+    const connectionID = clientID;
+    const onMessage = (message)=> { ... };
+    const onOpen = ()=> { ... };
+    
+    const wsClient = new ThinWSClient(wsURL, connectionID, onMessage, onOpen);
+
+## Client methods - 
 
 
 ### What to do after creating the client
@@ -109,13 +132,7 @@ Intended flow of messages:
 
     const customWSClient = new ThinWSClient(url, connectionID, onMessage, onOpen);
    
-`url` is your websocket server url (eg. ws://localhost:8080)
 
-`connectionID` is your client app identifier - this has to be the same every time so the server knows what rooms to join on connection
-
-`onMessage` is your custom message handler function - it gets a `message` object (param), then you can use that message to do whatever you want (show to screen, store to db...)
-
-`onOpen` (optional) this is where you can add custom code to trigger when the connections is done connecting
 
 <br/>
 

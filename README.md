@@ -122,12 +122,44 @@ So an example of creation would look like this:
 
 ## Client methods
 
+Call them like this:
+    
+    wsClient.send(message, roomID);
+
+### Connect 
+
+This method is called from the constructor so you don't have to worry about it. It connects the client to all his previously subscribed rooms.
+
+    connect()
+    
+
+### Subscribe
+
+    subscribe(roomID)
+
+Subscribes the client to get message from the room, and the client is able to send messages to the room.
+
+
+### Send
+
     send(payload, roomID)
     
 Sends the given payload to a room. Payload can be any JSON object. roomID is string.
 
+### Unsubscribe
+
+    unsubscribe(roomID)
+
+Unsubscribes the client from the room, permanently. Client can no longer send or receive messages from/to the room
+
+### Disconnect
+
+    disconnect()
+
+This method is not neccessary to call but helps the server to close the connection gracefully. This can be called when the user closes the browser tab or something like that. If the client disconnects without calling this, the server will still disconnect without problem, it will just use a bit more resources.
 
 
+    
 ### What to do after creating the client
 
 From the perspective of the client application, this is all you have to do. 
@@ -138,7 +170,7 @@ Intended flow of messages:
 
 1 ) client app creates the ThinWSClient instance - the instance will send the `connect` message to the server to inititate the connection and connect to client's existing rooms (if there are any)
 
-    const customWSClient = new ThinWSClient(url, connectionID, onMessage, onOpen);
+    const wsClient = new ThinWSClient(url, connectionID, onMessage, onOpen);
    
 
 
